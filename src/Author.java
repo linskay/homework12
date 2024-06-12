@@ -14,7 +14,20 @@ public class Author {
     public String getSurnameAuthor() {
         return this.surnameAuthor;
     }
-    //public String fullName (){
-    //return nameAuthor+ " "+ surnameAuthor; //- почему не работает объединение?:(
+    public String toString () {
+    return nameAuthor + " " + surnameAuthor;
 }
+
+    public boolean equals(Author other) {
+        if (this == other) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+        public int hashCode() {
+            return this.toString().toUpperCase().hashCode();
+        }
+    }
+
 
