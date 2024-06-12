@@ -14,9 +14,10 @@ public class Author {
     public String getSurnameAuthor() {
         return this.surnameAuthor;
     }
-    public String toString () {
-    return nameAuthor + " " + surnameAuthor;
-}
+
+    public String toString() {
+        return nameAuthor + " " + surnameAuthor;
+    }
 
     public boolean equals(Author other) {
         if (this == other) {
@@ -25,9 +26,10 @@ public class Author {
             return false;
         }
     }
-        public int hashCode() {
-            return this.toString().toUpperCase().hashCode();
-        }
+
+    public int hashCode() {
+        return this.toString().toUpperCase().hashCode();
     }
+}
 
 
