@@ -22,20 +22,25 @@ public class Book {
     }
 
     public void setYear(int year) {
+        if (year < 0) {
+            throw new IllegalArgumentException("Год не может быть отрицательным");
+        }
         this.year = year;
     }
 
     public String toString() {
-        return getNameBook() + ", " + getYear()+ " | " + getWriter();
+        return getNameBook() + ", " + getYear() + " | " + getWriter();
     }
+
     public boolean equals(Book other) {
         if (this == other) {
             return true;
-        } else {
-            return false;
         }
+        return this.toString().equalsIgnoreCase(other.toString());
     }
+
+    @Override
     public int hashCode() {
-        return this.toString().toUpperCase().hashCode();
+        return java.util.Objects.hash(toString());
     }
 }

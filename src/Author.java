@@ -22,13 +22,13 @@ public class Author {
     public boolean equals(Author other) {
         if (this == other) {
             return true;
-        } else {
-            return false;
         }
+        return this.toString().equalsIgnoreCase(other.toString());
     }
 
+    @Override
     public int hashCode() {
-        return this.toString().toUpperCase().hashCode();
+        return java.util.Objects.hash(toString());
     }
 }
 
