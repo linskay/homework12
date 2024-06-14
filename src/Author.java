@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Author {
     private String nameAuthor;
     private String surnameAuthor;
@@ -18,12 +20,12 @@ public class Author {
     public String toString() {
         return nameAuthor + " " + surnameAuthor;
     }
-
-    public boolean equals(Author other) {
-        if (this == other) {
-            return true;
-        }
-        return this.toString().equalsIgnoreCase(other.toString());
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return nameAuthor.equals(author.nameAuthor) && Objects.equals(surnameAuthor, author.surnameAuthor);
     }
 
     @Override
